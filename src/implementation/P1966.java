@@ -1,65 +1,46 @@
 package implementation;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 public class P1966 {
-	public static void main(String[] args) throws IOException  {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		Integer num = br.read();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Integer num = sc.nextInt();
+		int textNum = 0;
+		int indexNum = 0;
+		Queue<Integer> queue = new LinkedList<>();
 		ArrayList<Integer> result = new ArrayList<>();
 		for (int i = 0; i < num; i++) {
-			Integer textNum = br.read();
-			Integer indexNum = br.read();
-			int count = indexNum , resultCOunt = 0;
-			List<Integer> text = Arrays.asList();
-			Queue<Integer> queue = new LinkedList<>();
-			PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+			textNum = sc.nextInt();
+			indexNum = sc.nextInt();
+			int resultCOunt = 0;
+			queue = new LinkedList<>();
 			for (int j = 0; j < textNum; j++) {
-				Integer exNum = br.read();
-				text.add(exNum);
+				int exNum = sc.nextInt();
 				queue.add(exNum);
-				priorityQueue.add(exNum);
 			}
-			while(true) {
-//				Integer maxValue = text.stream().mapToInt(x -> x).max()
-//						.orElseThrow(NoSuchElementException::new);
-//				Integer value = queue.poll();
-//				indexNum--;
-//				count--;
-//				resultCOunt++;
-//				if (maxValue > value) {
-//					queue.add(value);
-//					indexNum++;
-//					resultCOunt--;
-//					if (indexNum > 0 && count == 0) {
-//						count = queue.size();
-//					}
-//				}
-//				if (indexNum == 0 && count )
-//					break;
-				
+			while(!queue.isEmpty()) {
 				Integer mV = queue.stream().mapToInt(x->x).max()
 						.orElseThrow(NoSuchElementException::new);
 				Integer value = queue.poll();
 				resultCOunt++;
-				if (indexNum == -1 && mV > text.get(count)) {
-					indexNum = queue.size();
+				indexNum--;
+				if (mV > value) {
 					queue.add(value);
 					resultCOunt--;
-				} else if (indexNum != -1 && mV <= text.get(count)){
-					
-					break;
+					if (indexNum == -1)
+						indexNum = queue.size() - 1;
+				} else if (indexNum == -1){
+						break;
 				}
 			}
-			result.add(resultCOunt);
+				result.add(resultCOunt);
 		}
-		result.forEach(System.out::print);
-		
+			for (Integer s : result){
+				System.out.println(s + " ");
+			}
 	}
-
 }
+
 
 
