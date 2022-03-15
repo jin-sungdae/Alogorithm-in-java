@@ -11,21 +11,28 @@ public class P9012 {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < N; i++) {
 			String str = br.readLine();
-			int check = 0;
-			for (int j = 0; j < str.length(); j++) {
-				if (str.charAt(j) == '(') {
-					stack.add(str.charAt(j));
-					check++;
-				} else if (str.charAt(j) == ')' && check > 0) {
-					stack.pop();
-					check--;
-				}
-			}
-			if (check == 0) {
-				sb.append("YES").append("\n");
+			System.out.println(solve(str));
+			
+			
+		}
+		System.out.println(sb.toString());
+	}
+	
+	public static String solve(String s) {
+		Stack<Character> stack = new Stack<>();
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == '(') {
+				stack.push(s.charAt(i));
+			} else if (stack.empty()) {
+				return "NO";
 			} else {
-				sb.append("NO").append("\n");
+				stack.pop();
 			}
+		}
+		if (stack.empty()) {
+			return "YES";
+		} else {
+			return "NO";
 		}
 	}
 }
