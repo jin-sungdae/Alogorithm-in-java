@@ -1,34 +1,48 @@
 package classification.queue;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.Buffer;
+
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.StringTokenizer;
+
+
+import java.util.*;
 
 public class P1966 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        StringBuilder sb = new StringBuilder();
-        StringTokenizer st;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Integer num = sc.nextInt();
+        int textNum = 0;
+        int indexNum = 0;
         Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < N; i++){
-            st = new StringTokenizer(br.readLine(), " ");
-            int Nun = Integer.parseInt(st.nextToken());
-            int K = Integer.parseInt(st.nextToken());
-            st = new StringTokenizer(br.readLine(), " ");
-            for (int j = 0; j < Nun; j++){
-                int M = Integer.parseInt(st.nextToken());
-                queue.add(M);
-                int z = 0;
-                while (z != K){
-
+        ArrayList<Integer> result = new ArrayList<>();
+        for (int i = 0; i < num; i++) {
+            textNum = sc.nextInt();
+            indexNum = sc.nextInt();
+            int resultCOunt = 0;
+            queue = new LinkedList<>();
+            for (int j = 0; j < textNum; j++) {
+                int exNum = sc.nextInt();
+                queue.add(exNum);
+            }
+            while(!queue.isEmpty()) {
+                Integer mV = queue.stream().mapToInt(x->x).max()
+                        .orElseThrow(NoSuchElementException::new);
+                Integer value = queue.poll();
+                resultCOunt++;
+                indexNum--;
+                if (mV > value) {
+                    queue.add(value);
+                    resultCOunt--;
+                    if (indexNum == -1)
+                        indexNum = queue.size() - 1;
+                } else if (indexNum == -1){
+                    break;
                 }
             }
-
+            result.add(resultCOunt);
+        }
+        for (Integer s : result){
+            System.out.println(s + " ");
         }
     }
 }
