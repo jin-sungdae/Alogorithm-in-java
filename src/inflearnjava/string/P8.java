@@ -2,18 +2,15 @@ package inflearnjava.string;
 
 import java.util.*;
 
-public class P3 {
+public class P8 {
+
 	public static String solution(String str) {
-		String result = "";
-		int m = Integer.MIN_VALUE;
-		String [] s = str.split(" ");
-		for (String x : s) {
-			if (m < x.length()) {
-				m = x.length();
-				result = x;
-			}
-		}
-		return result;
+		String answer = "NO";
+		str = str.toUpperCase().replaceAll("[^A-Z]", "");
+		String temp = new StringBuilder(str).reverse().toString();
+		if (str.equalsIgnoreCase(temp)) answer = "YES";
+		
+		return answer;
 	}
 	
 	public static void main(String []args) {
