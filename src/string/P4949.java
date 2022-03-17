@@ -5,37 +5,31 @@ import java.io.*;
 public class P4949 {
 	
 	public static String solution(String str) {
-		String result = "";
 		Stack<Character> stack = new Stack<>();
 		
-		
-		
+
 		for (char x : str.toCharArray()) {
 			if (x == '(' || x == '[') {
 				stack.push(x);
 			} else if (x == ')') {
-			
 				if (stack.isEmpty() || stack.peek() != '(') {
-					result = "no";
-					break;
+					return "no";
 				} else
 					stack.pop();
 			} else if (x ==']') {
 				if (stack.isEmpty() || stack.peek() != '[') {
-					result = "no";
-					break;
+					return "no";
 				}else 
 					stack.pop();
 				
 			}
 		}
 		if(stack.empty()) {
-			result = "yes";
+			return "yes";
 		}
 		else {
-			result = "no";
+			return "no";
 		}
-		return result;
 	}
 	
 	public static void main(String []args) throws IOException{
