@@ -10,6 +10,8 @@ public class P12 {
 			for (int j = 1; j <= N; j++) {
 				cnt = 0;
 				for (int k = 0; k < M; k++) {
+					pi = 0;
+					pj = 0;
 					for (int s = 0; s < N; s++) {
 						if (list[k][s] == i) {
 							pi = s;
@@ -18,7 +20,7 @@ public class P12 {
 							pj = s;
 						}
 					}
-					if (pi > pj)
+					if (pi < pj)
 						cnt++;
 				}
 				if (cnt == M)
