@@ -16,9 +16,9 @@ public class P6 {
 			System.out.println();
 		} else {
 			ch[L] = 1;
-			DFS (L + 1);
+			DFS (L + 1);			// 왜 두개?
 			ch[L] = 0;
-			DFS (L + 1);
+			DFS (L + 1);			// 왜 두개?
 		}
 	}
 	
