@@ -10,6 +10,7 @@ public class P1 {
 	static boolean flag = false;
 	public static void DFS(int L, int sum, int[] arr) {
 		if (flag) return ;
+		if (sum > total / 2) return ;
 		if (L == N) {
 			if ((total - sum) == sum) {
 				answer = "YES";
