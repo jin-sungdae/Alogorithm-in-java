@@ -27,7 +27,7 @@ public class P10 {
 		Scanner sc = new Scanner(System.in);
 		board = new int[8][8];
 		for (int i = 1; i <= 7; i++) {
-			for (int j = 1; j < 7; j++) {
+			for (int j = 1; j <= 7; j++) {
 				board[i][j] = sc.nextInt();
 			}
 		}
