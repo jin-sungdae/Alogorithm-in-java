@@ -4,13 +4,14 @@ import java.util.*;
 
 public class P2910 {
 	
-	public static void solution(Map<Integer, Integer> map) {
+	public static void solution(TreeMap<Integer, Integer> map) {
 		StringBuilder sb = new StringBuilder();
-		
+		int [] list = new int[2];
+		ArrayList<int []> arr = new ArrayList<>();
+		int i = 0;
 		for (Integer x : map.keySet()){
 			int tmp = map.get(x);
-			while (tmp-- > 0)
-				sb.append(x + " ");
+			arr.put()
 		}
 		System.out.println(sb);
 	}
@@ -19,7 +20,7 @@ public class P2910 {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
 		int C = sc.nextInt();
-		Map<Integer, Integer> map = new LinkedHashMap<>();
+		TreeMap<Integer, Integer> map = new TreeMap<>();
 		for (int i = 0; i < N; i++) {
 			int num = sc.nextInt();
 			if (num <= C) {
