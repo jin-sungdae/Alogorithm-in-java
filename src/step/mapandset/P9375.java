@@ -11,8 +11,6 @@ public class P9375 {
 		for (String x : map.keySet()) {
 			result *= map.get(x) + 1;
 		}
-//		if (map.size() != 1)
-//			result += map.size();
 		sb.append(result - 1).append("\n");
 	}
 	
