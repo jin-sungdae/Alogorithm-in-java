@@ -11,7 +11,7 @@ public class P2910 {
 		int i = 0;
 		for (Integer x : map.keySet()){
 			int tmp = map.get(x);
-			arr.put()
+			//arr.put();
 		}
 		System.out.println(sb);
 	}
