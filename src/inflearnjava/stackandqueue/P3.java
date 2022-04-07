@@ -7,9 +7,24 @@ public class P3 {
     static int n, nList;
     static int [][] board;
     static int [] list;
-    public static void solution(){
+    public static int solution(){
+        int answer = 0;
         Stack<Integer> stack = new Stack<>();
-
+        for (int pos : list){
+            for (int i = 0; i < n; i++){
+                if (board[i][pos - 1] != 0){
+                    int tmp = board[i][pos - 1];
+                    board[i][pos - 1] = 0;
+                    if (!stack.isEmpty() && tmp == stack.peek()){
+                        answer+=2;
+                        stack.pop();
+                    }
+                    else stack.push(tmp);
+                    break;
+                }
+            }
+        }
+        return answer;
     }
 
     public static void main(String[] args) {
@@ -27,6 +42,6 @@ public class P3 {
         for (int i = 0; i < nList; i++){
             list[i] = sc.nextInt();
         }
-
+        System.out.println(solution());
     }
 }
