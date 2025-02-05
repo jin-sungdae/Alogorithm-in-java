@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 public class 일로_만들기 {
 
+    /**
+     * 다익스트라로 푼것
+     */
     static class Node implements Comparable<Node> {
         int position, cost;
 
