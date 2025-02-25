@@ -15,6 +15,17 @@ public class 연속합 {
             arr[i] = sc.nextInt();
         }
 
+        dp[0] = arr[0];
+        for (int i = 1; i < n; i++) {
+            dp[i] = Math.max(dp[i - 1] + arr[i], arr[i]);
+        }
+
+        int result = Integer.MIN_VALUE;
+        for (int x : dp) {
+            result = Math.max(result, x);
+        }
+
+        System.out.println(result);
 
     }
 }
