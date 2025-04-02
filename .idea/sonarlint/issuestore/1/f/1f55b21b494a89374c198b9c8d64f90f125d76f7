@@ -1,0 +1,12 @@
+
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(õã´®8ôĞ‰Ó2J$bb8c3960-ab67-4930-9390-c14538ef1778
+‚
+java:S1118":Add a private constructor to hide the implicit public one.(³Çàùÿÿÿÿ8‹Ğ‰Ó2J$ebf0cbf6-1b69-433a-9d09-41c059a29f90
+€
+java:S1854"8Remove this useless assignment to local variable "time".(‚Ñ•®şÿÿÿÿ8­–†ŠÓ2J$7f4fe611-354e-4fc5-9966-efebea4db694
+_
+java:S1116"Remove this empty statement.(¦¨Å8ŒĞ‰Ó2J$db5e01cd-b84b-47a1-8dd2-3f0c02311fab
+l
+java:S1481")Remove this unused "time" local variable.(’ÇÎ½8®–†ŠÓ2J$d8d990f8-c594-4e7a-84ac-19fc76b77bcf
+m	java:S106+"+Replace this use of System.out by a logger.(ëÉ®å8Ğ‰Ó2J$17eff4c5-82b0-416d-8d68-408c02b5f87b
+m	java:S1066"+Replace this use of System.out by a logger.(ßİ½8Ğ‰Ó2J$20b02940-84c3-40fe-bc62-88d84b470d38
