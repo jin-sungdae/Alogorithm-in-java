@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class 거짓말 {
+public class 거짓말_Union_find {
 
     static class UnionFind {
         int[] parent;
