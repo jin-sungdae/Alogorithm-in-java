@@ -10,7 +10,6 @@ public class 선수과목_위상정렬 {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int [] t = new int[n + 1];
         int [] degree = new int[n + 1];
         List<List<Integer>> graph = new ArrayList<>();
         int [] dp = new int[n + 1];
@@ -27,7 +26,6 @@ public class 선수과목_위상정렬 {
 
             graph.get(a).add(b);
             degree[b]++;
-            t[b]++;
         }
 
         for (int i = 1; i <= n; i++) {
